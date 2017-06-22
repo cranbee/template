@@ -1,0 +1,56 @@
+[
+  "div",
+  {
+    "class": "wrapper"
+  },
+  "Text #1 Text #2",
+  [
+    "a",
+    {
+      "id": "link",
+      "class": "link",
+      "href": "#"
+    },
+    "I am a link"
+  ],
+  "Text #3Text #4",
+  [
+    "span",
+    {},
+    "I am a span"
+  ],
+  [
+    "custom-tag",
+    {
+      "data-key": "value"
+    },
+    "I am a custom tag"
+  ],
+  [
+    "div",
+    {}
+  ],
+  [
+    "br",
+    {}
+  ],
+  [
+    "ul",
+    {},
+    [
+      "li",
+      {},
+      "Item #1"
+    ],
+    [
+      "li",
+      {},
+      "Item #2"
+    ],
+    [
+      "li",
+      {},
+      "Item #3"
+    ]
+  ]
+]

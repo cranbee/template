@@ -1,0 +1,108 @@
+{
+  "type": "tag",
+  "name": "div",
+  "attrs": {
+    "class": "wrapper"
+  },
+  "children": [
+    {
+      "type": "text",
+      "value": "Text #1 Text #2"
+    },
+    {
+      "type": "tag",
+      "name": "a",
+      "attrs": {
+        "id": "link",
+        "class": "link",
+        "href": "#"
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "I am a link"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "value": "Text #3Text #4"
+    },
+    {
+      "type": "tag",
+      "name": "span",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "I am a span"
+        }
+      ]
+    },
+    {
+      "type": "tag",
+      "name": "custom-tag",
+      "attrs": {
+        "data-key": "value"
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "I am a custom tag"
+        }
+      ]
+    },
+    {
+      "type": "tag",
+      "name": "div",
+      "attrs": {},
+      "children": []
+    },
+    {
+      "type": "tag",
+      "name": "br",
+      "attrs": {},
+      "children": []
+    },
+    {
+      "type": "tag",
+      "name": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "tag",
+          "name": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Item #1"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "name": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Item #2"
+            }
+          ]
+        },
+        {
+          "type": "tag",
+          "name": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Item #3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

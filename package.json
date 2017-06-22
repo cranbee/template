@@ -1,0 +1,14 @@
+{
+  "name": "@cranbee/template",
+  "version": "0.1.0",
+  "description": "Cranbee Template Engine",
+  "main": "index.js",
+  "scripts": {
+      "test": "node test/test.js"
+  },
+  "author": "DMA <dma@cranbee.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}
