@@ -16,7 +16,7 @@
   "Text #3Text #4",
   [
     "span",
-    {},
+    0,
     "I am a span"
   ],
   [
@@ -27,29 +27,27 @@
     "I am a custom tag"
   ],
   [
-    "div",
-    {}
+    "div"
   ],
   [
-    "br",
-    {}
+    "br"
   ],
   [
     "ul",
-    {},
+    0,
     [
       "li",
-      {},
+      0,
       "Item #1"
     ],
     [
       "li",
-      {},
+      0,
       "Item #2"
     ],
     [
       "li",
-      {},
+      0,
       "Item #3"
     ]
   ]

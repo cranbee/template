@@ -1,17 +1,15 @@
 {
-  "type": "tag",
-  "name": "div",
+  "type": "div",
   "attrs": {
     "class": "wrapper"
   },
   "children": [
     {
-      "type": "text",
-      "value": "Text #1 Text #2"
+      "type": "#",
+      "text": "Text #1 Text #2"
     },
     {
-      "type": "tag",
-      "name": "a",
+      "type": "a",
       "attrs": {
         "id": "link",
         "class": "link",
@@ -19,86 +17,78 @@
       },
       "children": [
         {
-          "type": "text",
-          "value": "I am a link"
+          "type": "#",
+          "text": "I am a link"
         }
       ]
     },
     {
-      "type": "text",
-      "value": "Text #3Text #4"
+      "type": "#",
+      "text": "Text #3Text #4"
     },
     {
-      "type": "tag",
-      "name": "span",
+      "type": "span",
       "attrs": {},
       "children": [
         {
-          "type": "text",
-          "value": "I am a span"
+          "type": "#",
+          "text": "I am a span"
         }
       ]
     },
     {
-      "type": "tag",
-      "name": "custom-tag",
+      "type": "custom-tag",
       "attrs": {
         "data-key": "value"
       },
       "children": [
         {
-          "type": "text",
-          "value": "I am a custom tag"
+          "type": "#",
+          "text": "I am a custom tag"
         }
       ]
     },
     {
-      "type": "tag",
-      "name": "div",
+      "type": "div",
       "attrs": {},
       "children": []
     },
     {
-      "type": "tag",
-      "name": "br",
+      "type": "br",
       "attrs": {},
       "children": []
     },
     {
-      "type": "tag",
-      "name": "ul",
+      "type": "ul",
       "attrs": {},
       "children": [
         {
-          "type": "tag",
-          "name": "li",
+          "type": "li",
           "attrs": {},
           "children": [
             {
-              "type": "text",
-              "value": "Item #1"
+              "type": "#",
+              "text": "Item #1"
             }
           ]
         },
         {
-          "type": "tag",
-          "name": "li",
+          "type": "li",
           "attrs": {},
           "children": [
             {
-              "type": "text",
-              "value": "Item #2"
+              "type": "#",
+              "text": "Item #2"
             }
           ]
         },
         {
-          "type": "tag",
-          "name": "li",
+          "type": "li",
           "attrs": {},
           "children": [
             {
-              "type": "text",
-              "value": "Item #3"
+              "type": "#",
+              "text": "Item #3"
             }
           ]
         }
