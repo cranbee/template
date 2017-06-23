@@ -15,6 +15,14 @@ Test('Scan -> Parse -> Pack', t => {
     t.end();
 });
 
+Test('Unpack', t => {
+    let json = FS.readFileSync(`${__dirname}/samples/packet.json`, 'utf-8');
+    let packet = JSON.parse(json);
+    let ast = Packer.unpack(packet);
+    compareWithSample(t, ast, 'ast');
+    t.end();
+});
+
 // (object, object | array, string) => void
 function compareWithSample(t, obj, name) {
     let json = JSON.stringify(obj, null, 2);
