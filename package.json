@@ -8,6 +8,10 @@
   },
   "author": "DMA <dma@cranbee.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cranbee/template.git"
+  },
   "devDependencies": {
     "tape": "^4.6.3"
   }
