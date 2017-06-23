@@ -4,7 +4,8 @@
   "description": "Cranbee Template Engine",
   "main": "index.js",
   "scripts": {
-      "test": "node test/test.js"
+    "test": "node test/test.js",
+    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags"
   },
   "author": "DMA <dma@cranbee.com>",
   "license": "ISC",
