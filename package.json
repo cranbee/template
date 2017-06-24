@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js",
-    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags"
+    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags",
+    "generate-samples": "node test/generator.js"
   },
   "author": "DMA <dma@cranbee.com>",
   "license": "ISC",
