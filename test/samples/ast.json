@@ -1,6 +1,6 @@
 {
   "type": "div",
-  "attrs": {
+  "props": {
     "class": "wrapper"
   },
   "children": [
@@ -10,7 +10,7 @@
     },
     {
       "type": "a",
-      "attrs": {
+      "props": {
         "id": "link",
         "class": "link",
         "href": "#"
@@ -28,7 +28,7 @@
     },
     {
       "type": "span",
-      "attrs": {},
+      "props": {},
       "children": [
         {
           "type": "#",
@@ -38,7 +38,7 @@
     },
     {
       "type": "custom-tag",
-      "attrs": {
+      "props": {
         "data-key": "value"
       },
       "children": [
@@ -50,21 +50,21 @@
     },
     {
       "type": "div",
-      "attrs": {},
+      "props": {},
       "children": []
     },
     {
       "type": "br",
-      "attrs": {},
+      "props": {},
       "children": []
     },
     {
       "type": "ul",
-      "attrs": {},
+      "props": {},
       "children": [
         {
           "type": "li",
-          "attrs": {},
+          "props": {},
           "children": [
             {
               "type": "#",
@@ -74,7 +74,7 @@
         },
         {
           "type": "li",
-          "attrs": {},
+          "props": {},
           "children": [
             {
               "type": "#",
@@ -84,7 +84,7 @@
         },
         {
           "type": "li",
-          "attrs": {},
+          "props": {},
           "children": [
             {
               "type": "#",
