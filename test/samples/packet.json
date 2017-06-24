@@ -1,54 +1,66 @@
 [
   "div",
   {
-    "class": "wrapper"
+    "class": "prodlist"
   },
-  "Text #1 Text #2",
   [
-    "a",
+    "div",
     {
-      "id": "link",
-      "class": "link",
-      "href": "#"
+      "each": "item in items",
+      "class": "prodlist__item {item.mods}"
     },
-    "I am a link"
-  ],
-  "Text #3Text #4",
-  [
-    "span",
-    0,
-    "I am a span"
-  ],
-  [
-    "custom-tag",
-    {
-      "data-key": "value"
-    },
-    "I am a custom tag"
-  ],
-  [
-    "div"
-  ],
-  [
-    "br"
-  ],
-  [
-    "ul",
-    0,
     [
-      "li",
-      0,
-      "Item #1"
+      "img",
+      {
+        "if": "item.imageUrl",
+        "src": "{item.imageUrl}"
+      }
     ],
     [
-      "li",
-      0,
-      "Item #2"
+      "div",
+      {
+        "fi": "item.imageUrl",
+        "class": "prodlist__noimage"
+      }
     ],
     [
-      "li",
-      0,
-      "Item #3"
+      "a",
+      {
+        "href": "{item.url}",
+        "class": "prodlist__title"
+      },
+      "{item.title}"
+    ],
+    [
+      "div",
+      {
+        "class": "prodlist__brand"
+      },
+      "{item.brand}"
+    ],
+    [
+      "div",
+      {
+        "if": "item.isAvailable",
+        "class": "prodlist__price"
+      },
+      "€{item.price}"
+    ],
+    [
+      "button",
+      {
+        "if": "item.isAvailable",
+        "class": "prodlist__add"
+      },
+      "Add to cart"
+    ],
+    [
+      "div",
+      {
+        "fi": "item.isAvailable",
+        "class": "prodlist_na"
+      },
+      "Not available"
     ]
   ]
 ]

@@ -1,94 +1,93 @@
 {
   "type": "div",
   "props": {
-    "class": "wrapper"
+    "class": "prodlist"
   },
   "children": [
     {
-      "type": "#",
-      "text": "Text #1 Text #2"
-    },
-    {
-      "type": "a",
-      "props": {
-        "id": "link",
-        "class": "link",
-        "href": "#"
-      },
-      "children": [
-        {
-          "type": "#",
-          "text": "I am a link"
-        }
-      ]
-    },
-    {
-      "type": "#",
-      "text": "Text #3Text #4"
-    },
-    {
-      "type": "span",
-      "props": {},
-      "children": [
-        {
-          "type": "#",
-          "text": "I am a span"
-        }
-      ]
-    },
-    {
-      "type": "custom-tag",
-      "props": {
-        "data-key": "value"
-      },
-      "children": [
-        {
-          "type": "#",
-          "text": "I am a custom tag"
-        }
-      ]
-    },
-    {
       "type": "div",
-      "props": {},
-      "children": []
-    },
-    {
-      "type": "br",
-      "props": {},
-      "children": []
-    },
-    {
-      "type": "ul",
-      "props": {},
+      "props": {
+        "each": "item in items",
+        "class": "prodlist__item {item.mods}"
+      },
       "children": [
         {
-          "type": "li",
-          "props": {},
+          "type": "img",
+          "props": {
+            "if": "item.imageUrl",
+            "src": "{item.imageUrl}"
+          },
+          "children": []
+        },
+        {
+          "type": "div",
+          "props": {
+            "fi": "item.imageUrl",
+            "class": "prodlist__noimage"
+          },
+          "children": []
+        },
+        {
+          "type": "a",
+          "props": {
+            "href": "{item.url}",
+            "class": "prodlist__title"
+          },
           "children": [
             {
               "type": "#",
-              "text": "Item #1"
+              "text": "{item.title}"
             }
           ]
         },
         {
-          "type": "li",
-          "props": {},
+          "type": "div",
+          "props": {
+            "class": "prodlist__brand"
+          },
           "children": [
             {
               "type": "#",
-              "text": "Item #2"
+              "text": "{item.brand}"
             }
           ]
         },
         {
-          "type": "li",
-          "props": {},
+          "type": "div",
+          "props": {
+            "if": "item.isAvailable",
+            "class": "prodlist__price"
+          },
           "children": [
             {
               "type": "#",
-              "text": "Item #3"
+              "text": "€{item.price}"
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "props": {
+            "if": "item.isAvailable",
+            "class": "prodlist__add"
+          },
+          "children": [
+            {
+              "type": "#",
+              "text": "Add to cart"
+            }
+          ]
+        },
+        {
+          "type": "div",
+          "props": {
+            "fi": "item.isAvailable",
+            "class": "prodlist_na"
+          },
+          "children": [
+            {
+              "type": "#",
+              "text": "Not available"
             }
           ]
         }

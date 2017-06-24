@@ -5,7 +5,7 @@ let Parser = require('../lib/Parser.js');
 let Packer = require('../lib/Packer.js');
 
 Test('Scan -> Parse -> Pack', t => {
-    let source = FS.readFileSync(`${__dirname}/test.html`, 'utf-8');
+    let source = FS.readFileSync(`${__dirname}/template.html`, 'utf-8');
     let tokens = Scanner.scan(source);
     compareWithSample(t, tokens, 'tokens');
     let ast = Parser.parse(tokens);
