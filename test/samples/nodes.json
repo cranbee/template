@@ -1,0 +1,99 @@
+[
+  {
+    "type": "div",
+    "props": {
+      "class": "prodlist"
+    },
+    "children": [
+      {
+        "type": "div",
+        "props": {
+          "each": "item in items",
+          "class": "prodlist__item {item.mods}"
+        },
+        "children": [
+          {
+            "type": "img",
+            "props": {
+              "if": "item.imageUrl",
+              "src": "{item.imageUrl}"
+            },
+            "children": []
+          },
+          {
+            "type": "div",
+            "props": {
+              "fi": "item.imageUrl",
+              "class": "prodlist__noimage"
+            },
+            "children": []
+          },
+          {
+            "type": "a",
+            "props": {
+              "href": "{item.url}",
+              "class": "prodlist__title"
+            },
+            "children": [
+              {
+                "type": "#",
+                "text": "{item.title}"
+              }
+            ]
+          },
+          {
+            "type": "div",
+            "props": {
+              "class": "prodlist__brand"
+            },
+            "children": [
+              {
+                "type": "#",
+                "text": "{item.brand}"
+              }
+            ]
+          },
+          {
+            "type": "div",
+            "props": {
+              "if": "item.isAvailable",
+              "class": "prodlist__price"
+            },
+            "children": [
+              {
+                "type": "#",
+                "text": "€{item.price}"
+              }
+            ]
+          },
+          {
+            "type": "button",
+            "props": {
+              "if": "item.isAvailable",
+              "class": "prodlist__add"
+            },
+            "children": [
+              {
+                "type": "#",
+                "text": "Add to cart"
+              }
+            ]
+          },
+          {
+            "type": "div",
+            "props": {
+              "fi": "item.isAvailable",
+              "class": "prodlist_na"
+            },
+            "children": [
+              {
+                "type": "#",
+                "text": "Not available"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -9,9 +9,9 @@ function main() {
     let source = FS.readFileSync(`${__dirname}/template.html`, 'utf-8');
     let tokens = Scanner.scan(source);
     writeSample('tokens', tokens);
-    let ast = Parser.parse(tokens);
-    writeSample('ast', ast);
-    let packet = Packer.pack(ast);
+    let nodes = Parser.parse(tokens);
+    writeSample('nodes', nodes);
+    let packet = Packer.pack(nodes);
     writeSample('packet', packet);
 }
 

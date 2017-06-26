@@ -1,66 +1,68 @@
 [
-  "div",
-  {
-    "class": "prodlist"
-  },
   [
     "div",
     {
-      "each": "item in items",
-      "class": "prodlist__item {item.mods}"
+      "class": "prodlist"
     },
     [
-      "img",
-      {
-        "if": "item.imageUrl",
-        "src": "{item.imageUrl}"
-      }
-    ],
-    [
       "div",
       {
-        "fi": "item.imageUrl",
-        "class": "prodlist__noimage"
-      }
-    ],
-    [
-      "a",
-      {
-        "href": "{item.url}",
-        "class": "prodlist__title"
+        "each": "item in items",
+        "class": "prodlist__item {item.mods}"
       },
-      "{item.title}"
-    ],
-    [
-      "div",
-      {
-        "class": "prodlist__brand"
-      },
-      "{item.brand}"
-    ],
-    [
-      "div",
-      {
-        "if": "item.isAvailable",
-        "class": "prodlist__price"
-      },
-      "€{item.price}"
-    ],
-    [
-      "button",
-      {
-        "if": "item.isAvailable",
-        "class": "prodlist__add"
-      },
-      "Add to cart"
-    ],
-    [
-      "div",
-      {
-        "fi": "item.isAvailable",
-        "class": "prodlist_na"
-      },
-      "Not available"
+      [
+        "img",
+        {
+          "if": "item.imageUrl",
+          "src": "{item.imageUrl}"
+        }
+      ],
+      [
+        "div",
+        {
+          "fi": "item.imageUrl",
+          "class": "prodlist__noimage"
+        }
+      ],
+      [
+        "a",
+        {
+          "href": "{item.url}",
+          "class": "prodlist__title"
+        },
+        "{item.title}"
+      ],
+      [
+        "div",
+        {
+          "class": "prodlist__brand"
+        },
+        "{item.brand}"
+      ],
+      [
+        "div",
+        {
+          "if": "item.isAvailable",
+          "class": "prodlist__price"
+        },
+        "€{item.price}"
+      ],
+      [
+        "button",
+        {
+          "if": "item.isAvailable",
+          "class": "prodlist__add"
+        },
+        "Add to cart"
+      ],
+      [
+        "div",
+        {
+          "fi": "item.isAvailable",
+          "class": "prodlist_na"
+        },
+        "Not available"
+      ]
     ]
   ]
 ]

@@ -8,9 +8,9 @@ Test('Scan -> Parse -> Pack', t => {
     let source = FS.readFileSync(`${__dirname}/template.html`, 'utf-8');
     let tokens = Scanner.scan(source);
     compareWithSample(t, tokens, 'tokens');
-    let ast = Parser.parse(tokens);
-    compareWithSample(t, ast, 'ast');
-    let packet = Packer.pack(ast);
+    let nodes = Parser.parse(tokens);
+    compareWithSample(t, nodes, 'nodes');
+    let packet = Packer.pack(nodes);
     compareWithSample(t, packet, 'packet');
     t.end();
 });
@@ -18,8 +18,8 @@ Test('Scan -> Parse -> Pack', t => {
 Test('Unpack', t => {
     let json = FS.readFileSync(`${__dirname}/samples/packet.json`, 'utf-8');
     let packet = JSON.parse(json);
-    let ast = Packer.unpack(packet);
-    compareWithSample(t, ast, 'ast');
+    let nodes = Packer.unpack(packet);
+    compareWithSample(t, nodes, 'nodes');
     t.end();
 });
 
