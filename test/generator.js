@@ -3,6 +3,8 @@ let Test = require('tape');
 let Scanner = require('../lib/Scanner.js');
 let Parser = require('../lib/Parser.js');
 let Packer = require('../lib/Packer.js');
+let Executor = require('../lib/Executor.js');
+let Data = require('./data.json');
 
 // () => void
 function main() {
@@ -13,6 +15,8 @@ function main() {
     writeSample('nodes', nodes);
     let packet = Packer.pack(nodes);
     writeSample('packet', packet);
+    let result = Executor.execute(nodes, Data);
+    writeSample('result', result);
 }
 
 // (string, object | array) => void

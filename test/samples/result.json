@@ -1,0 +1,128 @@
+[
+  [
+    {
+      "type": "div",
+      "props": {
+        "class": "prodlist"
+      },
+      "children": [
+        {
+          "type": "div",
+          "props": {
+            "class": "prodlist__item _av"
+          },
+          "children": [
+            {
+              "type": "img",
+              "props": {
+                "src": "/images/products/a-1.jpg"
+              },
+              "children": []
+            },
+            {
+              "type": "a",
+              "props": {
+                "href": "/products/a-1.html",
+                "class": "prodlist__title"
+              },
+              "children": [
+                {
+                  "type": "#",
+                  "text": "Product A-1"
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "props": {
+                "class": "prodlist__brand"
+              },
+              "children": [
+                {
+                  "type": "#",
+                  "text": "Brand A"
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "props": {
+                "class": "prodlist__price"
+              },
+              "children": [
+                {
+                  "type": "#",
+                  "text": "€9.90"
+                }
+              ]
+            },
+            {
+              "type": "button",
+              "props": {
+                "class": "prodlist__add"
+              },
+              "children": [
+                {
+                  "type": "#",
+                  "text": "Add to cart"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "div",
+          "props": {
+            "class": "prodlist__item _na"
+          },
+          "children": [
+            {
+              "type": "div",
+              "props": {
+                "class": "prodlist__noimage"
+              },
+              "children": []
+            },
+            {
+              "type": "a",
+              "props": {
+                "href": "/products/z-2.html",
+                "class": "prodlist__title"
+              },
+              "children": [
+                {
+                  "type": "#",
+                  "text": "Product Z-2"
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "props": {
+                "class": "prodlist__brand"
+              },
+              "children": [
+                {
+                  "type": "#",
+                  "text": "Brand Z"
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "props": {
+                "class": "prodlist_na"
+              },
+              "children": [
+                {
+                  "type": "#",
+                  "text": "Not available"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+]
