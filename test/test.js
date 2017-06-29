@@ -3,6 +3,8 @@ let Test = require('tape');
 let Scanner = require('../lib/scanner.js');
 let Parser = require('../lib/parser.js');
 let Packer = require('../lib/packer.js');
+let Executor = require('../lib/executor.js');
+let Data = require('./data.json');
 
 Test('Scan -> Parse -> Pack', t => {
     let source = FS.readFileSync(`${__dirname}/template.html`, 'utf-8');
@@ -15,11 +17,13 @@ Test('Scan -> Parse -> Pack', t => {
     t.end();
 });
 
-Test('Unpack', t => {
+Test('Unpack -> Execute', t => {
     let json = FS.readFileSync(`${__dirname}/samples/packet.json`, 'utf-8');
     let packet = JSON.parse(json);
     let nodes = Packer.unpack(packet);
     compareWithSample(t, nodes, 'nodes');
+    let result = Executor.execute(nodes, Data);
+    compareWithSample(t, result, 'result');
     t.end();
 });
 
