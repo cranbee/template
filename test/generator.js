@@ -1,9 +1,9 @@
 let FS = require('fs');
 let Test = require('tape');
-let Scanner = require('../lib/Scanner.js');
-let Parser = require('../lib/Parser.js');
-let Packer = require('../lib/Packer.js');
-let Executor = require('../lib/Executor.js');
+let Scanner = require('../lib/scanner.js');
+let Parser = require('../lib/parser.js');
+let Packer = require('../lib/packer.js');
+let Executor = require('../lib/executor.js');
 let Data = require('./data.json');
 
 // () => void
