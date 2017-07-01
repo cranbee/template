@@ -1,6 +1,6 @@
-let Scanner = require('./lib/Scanner.js');
-let Parser = require('./lib/Parser.js');
-let Packer = require('./lib/Packer.js');
+let Scanner = require('./lib/scanner.js');
+let Parser = require('./lib/parser.js');
+let Packer = require('./lib/packer.js');
 
 module.exports = {
     scan: Scanner.scan,
