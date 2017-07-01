@@ -1,21 +1,18 @@
 let FS = require('fs');
 let Test = require('tape');
-let Scanner = require('../lib/scanner.js');
-let Parser = require('../lib/parser.js');
-let Packer = require('../lib/packer.js');
-let Executor = require('../lib/executor.js');
+let Template = require('../index.js');
 let Data = require('./data.json');
 
 // () => void
 function main() {
     let source = FS.readFileSync(`${__dirname}/template.html`, 'utf-8');
-    let tokens = Scanner.scan(source);
+    let tokens = Template.scan(source);
     writeSample('tokens', tokens);
-    let nodes = Parser.parse(tokens);
+    let nodes = Template.parse(tokens);
     writeSample('nodes', nodes);
-    let packet = Packer.pack(nodes);
+    let packet = Template.pack(nodes);
     writeSample('packet', packet);
-    let result = Executor.execute(nodes, Data);
+    let result = Template.execute(nodes, Data);
     writeSample('result', result);
 }
 
