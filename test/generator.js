@@ -1,6 +1,6 @@
+let Data = require('./data.js');
 let FS = require('fs');
 let Template = require('../index.js');
-let Data = require('./data.json');
 
 // () => void
 function main() {
@@ -11,7 +11,7 @@ function main() {
     writeSample('nodes', nodes);
     let packet = Template.pack(nodes);
     writeSample('packet', packet);
-    let result = Template.execute(nodes, Data);
+    let result = Template.execute(nodes, Data.get());
     writeSample('result', result);
 }
 

@@ -1,7 +1,7 @@
+let Data = require('./data.js');
 let FS = require('fs');
-let Test = require('tape');
 let Template = require('../index.js');
-let Data = require('./data.json');
+let Test = require('tape');
 
 Test('Scan -> Parse -> Pack', t => {
     let source = FS.readFileSync(`${__dirname}/template.html`, 'utf-8');
@@ -19,7 +19,7 @@ Test('Unpack -> Execute', t => {
     let packet = JSON.parse(json);
     let nodes = Template.unpack(packet);
     compareWithSample(t, nodes, 'nodes');
-    let result = Template.execute(nodes, Data);
+    let result = Template.execute(nodes, Data.get());
     compareWithSample(t, result, 'result');
     t.end();
 });
