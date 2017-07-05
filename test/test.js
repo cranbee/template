@@ -1,15 +1,18 @@
 let Data = require('./data.js');
+let Executor = require('../lib/executor.js');
 let FS = require('fs');
-let Template = require('../index.js');
+let Packer = require('../lib/packer.js');
+let Parser = require('../lib/parser.js');
+let Scanner = require('../lib/scanner.js');
 let Test = require('tape');
 
 Test('Scan -> Parse -> Pack', t => {
     let source = FS.readFileSync(`${__dirname}/template.html`, 'utf-8');
-    let tokens = Template.scan(source);
+    let tokens = Scanner.scan(source);
     compareWithSample(t, tokens, 'tokens');
-    let nodes = Template.parse(tokens);
+    let nodes = Parser.parse(tokens);
     compareWithSample(t, nodes, 'nodes');
-    let packet = Template.pack(nodes);
+    let packet = Packer.pack(nodes);
     compareWithSample(t, packet, 'packet');
     t.end();
 });
@@ -17,9 +20,9 @@ Test('Scan -> Parse -> Pack', t => {
 Test('Unpack -> Execute', t => {
     let json = FS.readFileSync(`${__dirname}/samples/packet.json`, 'utf-8');
     let packet = JSON.parse(json);
-    let nodes = Template.unpack(packet);
+    let nodes = Packer.unpack(packet);
     compareWithSample(t, nodes, 'nodes');
-    let result = Template.execute(nodes, Data.get());
+    let result = Executor.execute(nodes, Data.get());
     compareWithSample(t, result, 'result');
     t.end();
 });
