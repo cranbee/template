@@ -45,7 +45,7 @@
           "if": "item.isAvailable",
           "class": "prodlist__price"
         },
-        "€{item.price}"
+        "€ {item.price}"
       ],
       [
         "button",

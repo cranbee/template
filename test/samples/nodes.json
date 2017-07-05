@@ -62,7 +62,7 @@
             "children": [
               {
                 "type": "#",
-                "text": "€{item.price}"
+                "text": "€ {item.price}"
               }
             ]
           },

@@ -5,7 +5,7 @@
         <div fi="item.imageUrl" class="prodlist__noimage" />
         <a href="{item.url}" class="prodlist__title">{item.title}</a>
         <div class="prodlist__brand">{item.brand}</div>
-        <div if="item.isAvailable" class="prodlist__price">€{item.price}</div>
+        <div if="item.isAvailable" class="prodlist__price">€ {item.price}</div>
         <button if="item.isAvailable" class="prodlist__add">Add to cart</button>
         <div fi="item.isAvailable" class="prodlist_na">Not available</div>
     </div>

@@ -1,5 +1,4 @@
 let FS = require('fs');
-let Test = require('tape');
 let Template = require('../index.js');
 let Data = require('./data.json');
 
