@@ -10,7 +10,7 @@ This is how a **template** may look like:
 <!-- This is a test template -->
 <div class="prodlist">
     <div each="item in items" class="prodlist__item {item.mods}">
-        <img if="item.imageUrl" src="{item.imageUrl}" />
+        <img if="item.imageUrl" src="{item.imageUrl}"/>
         <div fi="item.imageUrl" class="prodlist__noimage"></div>
         <a href="{item.url}" class="prodlist__title">{item.title}</a>
         <div class="prodlist__brand">{item.brand}</div>
