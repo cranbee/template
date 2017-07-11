@@ -1,7 +1,7 @@
 # Cranbee Template Engine
-## Introduction
 This is a library for working with Cranbee Templates.
 
+## Introduction
 Let's start with an example.
 
 This is how a **template** may look like:
