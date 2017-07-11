@@ -148,7 +148,7 @@ Unpacks the template.
 ```js
 let Template = require("@cranbee/template");
 
-let source = "<a href="{url}">{title}</a>";
+let source = '<a href="{url}">{title}</a>';
 let data = { url: "https://example.com", title: "Example" };
 
 let template = Template.parse(source);
