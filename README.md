@@ -29,20 +29,20 @@ Also let's introduce some **data**:
 {
     items: [
         {
-            title: 'Product A-1',
-            brand: 'Brand A',
-            price: '9.90',
-            url: '/products/a-1.html',
-            imageUrl: '/images/products/a-1.jpg',
+            title: "Product A-1",
+            brand: "Brand A",
+            price: "9.90",
+            url: "/products/a-1.html",
+            imageUrl: "/images/products/a-1.jpg",
             isAvailable: true,
-            mods: '_av'
+            mods: "_av"
         },
         {
-            title: 'Product Z-2',
-            brand: 'Brand Z',
-            url: '/products/z-2.html',
+            title: "Product Z-2",
+            brand: "Brand Z",
+            url: "/products/z-2.html",
             isAvailable: false,
-            mods: '_na'
+            mods: "_na"
         }
     ]
 }
@@ -59,63 +59,63 @@ The **result** for the **template** and **data** above will be:
 ```js
 [
     {
-        type: 'div',
-        props: { class: 'prodlist' },
+        type: "div",
+        props: { class: "prodlist" },
         children: [
             {
-                type: 'div',
-                props: { class: 'prodlist__item _av' },
+                type: "div",
+                props: { class: "prodlist__item _av" },
                 children: [
                     {
-                        type: 'img',
-                        props: { src: '/images/products/a-1.jpg' },
+                        type: "img",
+                        props: { src: "/images/products/a-1.jpg" },
                         children: []
                     },
                     {
-                        type: 'a',
-                        props: { href: '/products/a-1.html', class: 'prodlist__title' },
-                        children: [{ type: '#', text: 'Product A-1' }]
+                        type: "a",
+                        props: { href: "/products/a-1.html", class: "prodlist__title" },
+                        children: [{ type: "#", text: "Product A-1" }]
                     },                    
                     {
-                        type: 'div',
-                        props: { class: 'prodlist__brand' },
-                        children: [{ type: '#', text: 'Brand A' }]
+                        type: "div",
+                        props: { class: "prodlist__brand" },
+                        children: [{ type: "#", text: "Brand A" }]
                     },
                     {
-                        type: 'div',
-                        props: { class: 'prodlist__price' },
-                        children: [{ type: '#', text: '€ 9.90' }]
+                        type: "div",
+                        props: { class: "prodlist__price" },
+                        children: [{ type: "#", text: "€ 9.90" }]
                     },
                     {
-                        type: 'button',
-                        props: { class: 'prodlist__add' },
-                        children: [{ type: '#', text: 'Add to cart' }]
+                        type: "button",
+                        props: { class: "prodlist__add" },
+                        children: [{ type: "#", text: "Add to cart" }]
                     }
                 ]
             },            
             {
-                type: 'div',
-                props: { class: 'prodlist__item _na' },
+                type: "div",
+                props: { class: "prodlist__item _na" },
                 children: [
                     {
-                        type: 'div',
-                        props: { class: 'prodlist__noimage' },
+                        type: "div",
+                        props: { class: "prodlist__noimage" },
                         children: []
                     },
                     {
-                        type: 'a',
-                        props: { href: '/products/z-2.html', class: 'prodlist__title' },
-                        children: [{ type: '#', text: 'Product Z-2' }]
+                        type: "a",
+                        props: { href: "/products/z-2.html", class: "prodlist__title" },
+                        children: [{ type: "#", text: "Product Z-2" }]
                     },
                     {
-                        type: 'div',
-                        props: { class: 'prodlist__brand' },
-                        children: [{ type: '#', text: 'Brand Z' }]
+                        type: "div",
+                        props: { class: "prodlist__brand" },
+                        children: [{ type: "#", text: "Brand Z" }]
                     },
                     {
-                        type: 'div',
-                        props: { class: 'prodlist_na' },
-                        children: [{ type: '#', text: 'Not available' }]
+                        type: "div",
+                        props: { class: "prodlist_na" },
+                        children: [{ type: "#", text: "Not available" }]
                     }
                 ]
             }
@@ -146,18 +146,18 @@ Unpacks the template.
 
 ## Example
 ```js
-let Template = require('@cranbee/template');
+let Template = require("@cranbee/template");
 
-let source = '<a href="{url}">{title}</a>';
-let data = { url: 'https://example.com', title: 'Example' };
+let source = "<a href="{url}">{title}</a>";
+let data = { url: "https://example.com", title: "Example" };
 
 let template = Template.parse(source);
 let result = Template.execute(template, data);
 
-console.log('Template nodes:')
+console.log("Template nodes:")
 console.log(JSON.stringify(template));
 console.log();
-console.log('Result nodes:')
+console.log("Result nodes:")
 console.log(JSON.stringify(result));
 ```
 

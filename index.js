@@ -1,7 +1,7 @@
-let Executor = require('./lib/executor.js');
-let Packer = require('./lib/packer.js');
-let Parser = require('./lib/parser.js');
-let Scanner = require('./lib/scanner.js');
+let Executor = require("./lib/executor.js");
+let Packer = require("./lib/packer.js");
+let Parser = require("./lib/parser.js");
+let Scanner = require("./lib/scanner.js");
 
 // string => array
 function parse(text) {
