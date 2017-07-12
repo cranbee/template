@@ -124,7 +124,29 @@ The **result** for the **template** and **data** above will be:
 ]
 ```
 
-The library lets you get this tree and does not aware what you will do with it.
+The library lets you get this tree and does not care what you will do with it.
+
+## Nodes
+A template and a result are arrays of nodes. And there are 2 kinds of nodes.
+
+(1) Text nodes:
+
+```js
+{
+    type: "#",
+    text: string
+}
+```
+
+(2) Tag nodes:
+
+```js
+{
+    type: string,   // tag name
+    props: object,  // tag properties
+    children: array // array of child nodes
+}
+```
 
 ## Installation
 ```bash
