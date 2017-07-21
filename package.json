@@ -4,10 +4,7 @@
   "description": "Cranbee Template Engine",
   "main": "index.js",
   "scripts": {
-    "test": "node test/test.js",
-    "patch-release": "npm version patch && npm publish --access=public && git push --follow-tags",
-    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags",
-    "generate-samples": "node test/generator.js"
+    "test": "make test"
   },
   "author": "DMA <dma@cranbee.com>",
   "license": "MIT",
@@ -16,6 +13,8 @@
     "url": "https://github.com/cranbee/template.git"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "tape": "^4.6.3"
   }
 }
