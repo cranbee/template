@@ -12,12 +12,12 @@ function create(tokens) {
     });
 }
 
-// object => object | void
+// object => object | undefined
 function getToken($) {
     return $.tokens[$.pos - 1];
 }
 
-// (object, string) => void
+// (object, string) => undefined
 function expect($, type) {
     if (!accept($, type)) {
         let token = $.tokens[$.pos];

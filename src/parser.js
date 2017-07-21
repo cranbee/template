@@ -99,7 +99,7 @@ function initTagNode(token) {
     };
 }
 
-// object => void
+// object => undefined
 function validateProps(token) {
     let keys = Object.keys(token.props);
     for (let i = 0; i < keys.length; i += 1) {

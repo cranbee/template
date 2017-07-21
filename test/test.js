@@ -27,7 +27,7 @@ Test("Unpack -> Execute", t => {
     t.end();
 });
 
-// (object, object | array, string) => void
+// (object, object | array, string) => undefined
 function compareWithSample(t, obj, name) {
     let json = JSON.stringify(obj, null, 2);
     let sample = FS.readFileSync(`${__dirname}/samples/${name}.json`, "utf-8");

@@ -50,16 +50,16 @@ function processExpr(value, data) {
     }
     let m = value.match(RE_EXPR);
     if (!m) {
-        return;
+        return null;
     }
     return m[1] ? processPath(m[1], data) : parseFloat(m[2]);
 }
 
-// (string, object) => object | void
+// (string, object) => object | null
 function processEach(value, data) {
     let m = value.match(RE_EACH);
     if (!m) {
-        return;
+        return null;
     }
     let items = processPath(m[2], data);
     if (!Array.isArray(items)) {
@@ -76,7 +76,7 @@ function processPath(path, data) {
 // (array, object) => any
 function processPathArray(path, data) {
     if (!data) {
-        return;
+        return null;
     }
     let value = data[path[0]];
     return path.length > 1 ? processPathArray(path.slice(1), value) : value;

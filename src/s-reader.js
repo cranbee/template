@@ -26,7 +26,7 @@ function getPos($) {
     return $.pos;
 }
 
-// (object, string) => void
+// (object, string) => undefined
 function expect($, str) {
     if (!accept($, str)) {
         throw Tools.syntaxError("Unexpected character", $.pos);
@@ -36,7 +36,7 @@ function expect($, str) {
 // (object, object) => string
 function expectRE($, regexp) {
     let str = acceptRE($, regexp);
-    if (Tools.isVoid(str)) {
+    if (str === null) {
         throw Tools.syntaxError("Unexpected character", $.pos);
     }
     return str;
@@ -51,11 +51,11 @@ function accept($, str) {
     return true;
 }
 
-// (object, object) => string | void
+// (object, object) => string | null
 function acceptRE($, regexp) {
     let m = $.text.substr($.pos).match(regexp);
     if (!m) {
-        return undefined;
+        return null;
     }
     let str = m[0];
     $.pos += str.length;

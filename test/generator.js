@@ -5,7 +5,7 @@ let Packer = require("../lib/packer.js");
 let Parser = require("../lib/parser.js");
 let Scanner = require("../lib/scanner.js");
 
-// () => void
+// () => undefined
 function main() {
     let source = FS.readFileSync(`${__dirname}/template.html`, "utf-8");
     let tokens = Scanner.scan(source);
@@ -18,7 +18,7 @@ function main() {
     writeSample("result", result);
 }
 
-// (string, object | array) => void
+// (string, object | array) => undefined
 function writeSample(name, obj) {
     let json = JSON.stringify(obj, null, 2);
     FS.writeFileSync(`${__dirname}/samples/${name}.json`, json + "\n");
