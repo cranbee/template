@@ -1,4 +1,4 @@
-.PHONY: lib samples test patch minor clean
+.PHONY: lib samples test perf patch minor clean
 
 lib:
 	npx babel src -d lib
@@ -9,6 +9,12 @@ samples:
 test:
 	node test/test.js
 
+perf:
+	rm -f prof.txt
+	node --prof test/perf.js
+	node --prof-process isolate-* > prof.txt
+	rm isolate-*
+
 patch:
 	npm version patch && npm publish --access=public
 
@@ -17,3 +23,4 @@ minor:
 
 clean:
 	rm -rf lib
+	rm -f prof.txt
