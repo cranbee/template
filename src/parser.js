@@ -14,12 +14,12 @@ function parse(tokens) {
         }
         if (tr.accept("text")) {
             nodes.push(parseText(tr));
-        }
-        if (tr.accept("tag_0")) {
+        } else if (tr.accept("tag_0")) {
             nodes.push(parseTag0(tr));
+        } else {
+            tr.expect("tag_1");
+            nodes.push(parseTag1(tr));
         }
-        tr.expect("tag_1");
-        nodes.push(parseTag1(tr));
     }
 }
 
