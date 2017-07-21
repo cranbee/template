@@ -59,7 +59,7 @@ function executeEach(node, data) {
         props: Object.assign({}, node.props),
         children: node.children
     };
-    nextNode.props.each = undefined;
+    nextNode.props.each = null;
     let nextData = Object.assign({}, data);
     let result = [];
     for (let i = 0; i < each.items.length; i += 1) {
@@ -80,7 +80,7 @@ function executeIf(node, data) {
         props: Object.assign({}, node.props),
         children: node.children
     };
-    nextNode.props.if = undefined;
+    nextNode.props.if = null;
     return executeNode(nextNode, data);
 }
 
@@ -94,7 +94,7 @@ function executeFi(node, data) {
         props: Object.assign({}, node.props),
         children: node.children
     };
-    nextNode.props.fi = undefined;
+    nextNode.props.fi = null;
     return executeNode(nextNode, data);
 }
 

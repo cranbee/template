@@ -26,7 +26,7 @@ function parse(tokens) {
 // array => array
 function prepareTokens(tokens) {
     let result = [];
-    let lastToken;
+    let lastToken = null;
     for (let i = 0; i < tokens.length; i += 1) {
         let token = tokens[i];
         let newToken;
