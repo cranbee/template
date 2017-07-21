@@ -92,7 +92,7 @@ function parseTag1(tr) {
 function initTagNode(token) {
     Object.keys(token.props).forEach(key => {
         if (!validateProp(key, token.props[key])) {
-            throw syntaxError(`Invalid value for "${key}" property`, token);
+            throw Tools.syntaxError(`Invalid value for "${key}" property`, token);
         }
     });
     return {
