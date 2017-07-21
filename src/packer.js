@@ -24,9 +24,10 @@ function packNode(node) {
     if (!hasProps) {
         item.push(0);
     }
-    node.children.forEach(child => {
+    for (let i = 0; i < node.children.length; i += 1) {
+        let child = node.children[i];
         item.push(packNode(child));
-    });
+    }
     return item;
 }
 

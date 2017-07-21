@@ -27,7 +27,8 @@ function parse(tokens) {
 function prepareTokens(tokens) {
     let result = [];
     let lastToken;
-    tokens.forEach(token => {
+    for (let i = 0; i < tokens.length; i++) {
+        let token = tokens[i];
         let newToken;
         if (token.type === "text") {
             let value = token.value.replace(GRE_WS, " ").trim();
@@ -45,7 +46,7 @@ function prepareTokens(tokens) {
             result.push(newToken);
             lastToken = newToken;
         }
-    });
+    }
     result.push({ type: "$" });
     return result;
 }
@@ -90,16 +91,23 @@ function parseTag1(tr) {
 
 // object => object
 function initTagNode(token) {
-    Object.keys(token.props).forEach(key => {
-        if (!validateProp(key, token.props[key])) {
-            throw Tools.syntaxError(`Invalid value for "${key}" property`, token);
-        }
-    });
+    validateProps(token);
     return {
         type: token.name,
         props: token.props,
         children: []
     };
+}
+
+// object => void
+function validateProps(token) {
+    let keys = Object.keys(token.props);
+    for (let i = 0; i < keys.length; i += 1) {
+        let key = keys[i];
+        if (!validateProp(key, token.props[key])) {
+            throw Tools.syntaxError(`Invalid value for "${key}" property`, token);
+        }
+    }
 }
 
 // (string, string) => boolean
