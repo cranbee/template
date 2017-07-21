@@ -3,7 +3,7 @@ let Extender = require("./extender.js");
 // (array, object) => array
 function execute(template, data) {
     let result = [];
-    for (let i = 0; i < template.length; i++) {
+    for (let i = 0; i < template.length; i += 1) {
         let node = template[i];
         result = result.concat(executeNode(node, data));
     }

@@ -41,7 +41,7 @@ function unpackNode(item) {
         props: item[1] || {},
         children: []
     };
-    for (let i = 2; i < item.length; i++) {
+    for (let i = 2; i < item.length; i += 1) {
         node.children.push(unpackNode(item[i]));
     }
     return node;

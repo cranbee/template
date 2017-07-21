@@ -34,7 +34,7 @@ function compareWithSample(t, obj, name) {
     let lines1 = json.split("\n");
     let lines2 = sample.split("\n");
     let n = Math.max(lines1.length, lines2.length);
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n; i += 1) {
         let line1 = lines1[i] || "";
         let line2 = lines2[i] || "";
         if (line1 !== line2) {

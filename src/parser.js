@@ -27,7 +27,7 @@ function parse(tokens) {
 function prepareTokens(tokens) {
     let result = [];
     let lastToken;
-    for (let i = 0; i < tokens.length; i++) {
+    for (let i = 0; i < tokens.length; i += 1) {
         let token = tokens[i];
         let newToken;
         if (token.type === "text") {
