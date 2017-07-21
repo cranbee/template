@@ -8,14 +8,14 @@
       {
         "type": "div",
         "props": {
-          "each": "item in items",
+          "each": "{item in items}",
           "class": "prodlist__item {item.mods}"
         },
         "children": [
           {
             "type": "img",
             "props": {
-              "if": "item.imageUrl",
+              "if": "{item.imageUrl}",
               "src": "{item.imageUrl}"
             },
             "children": []
@@ -23,7 +23,7 @@
           {
             "type": "div",
             "props": {
-              "fi": "item.imageUrl",
+              "fi": "{item.imageUrl}",
               "class": "prodlist__noimage"
             },
             "children": []
@@ -56,7 +56,7 @@
           {
             "type": "div",
             "props": {
-              "if": "item.isAvailable",
+              "if": "{item.isAvailable}",
               "class": "prodlist__price"
             },
             "children": [
@@ -69,7 +69,7 @@
           {
             "type": "button",
             "props": {
-              "if": "item.isAvailable",
+              "if": "{item.isAvailable}",
               "class": "prodlist__add"
             },
             "children": [
@@ -82,7 +82,7 @@
           {
             "type": "div",
             "props": {
-              "fi": "item.isAvailable",
+              "fi": "{item.isAvailable}",
               "class": "prodlist_na"
             },
             "children": [

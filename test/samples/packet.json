@@ -7,20 +7,20 @@
     [
       "div",
       {
-        "each": "item in items",
+        "each": "{item in items}",
         "class": "prodlist__item {item.mods}"
       },
       [
         "img",
         {
-          "if": "item.imageUrl",
+          "if": "{item.imageUrl}",
           "src": "{item.imageUrl}"
         }
       ],
       [
         "div",
         {
-          "fi": "item.imageUrl",
+          "fi": "{item.imageUrl}",
           "class": "prodlist__noimage"
         }
       ],
@@ -42,7 +42,7 @@
       [
         "div",
         {
-          "if": "item.isAvailable",
+          "if": "{item.isAvailable}",
           "class": "prodlist__price"
         },
         "€ {item.price}"
@@ -50,7 +50,7 @@
       [
         "button",
         {
-          "if": "item.isAvailable",
+          "if": "{item.isAvailable}",
           "class": "prodlist__add"
         },
         "Add to cart"
@@ -58,7 +58,7 @@
       [
         "div",
         {
-          "fi": "item.isAvailable",
+          "fi": "{item.isAvailable}",
           "class": "prodlist_na"
         },
         "Not available"

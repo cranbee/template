@@ -51,6 +51,9 @@ function executeText(node, data) {
 // (object, object) => array
 function executeEach(node, data) {
     let each = Extender.processEach(node.props.each, data);
+    if (!each) {
+        return [];
+    }
     let nextNode = {
         type: node.type,
         props: Object.assign({}, node.props),
@@ -69,7 +72,7 @@ function executeEach(node, data) {
 
 // (object, object) => array
 function executeIf(node, data) {
-    if (!Extender.processExp(node.props.if, data)) {
+    if (!Extender.processExpr(node.props.if, data)) {
         return [];
     }
     let nextNode = {
@@ -83,7 +86,7 @@ function executeIf(node, data) {
 
 // (object, object) => array
 function executeFi(node, data) {
-    if (Extender.processExp(node.props.fi, data)) {
+    if (Extender.processExpr(node.props.fi, data)) {
         return [];
     }
     let nextNode = {

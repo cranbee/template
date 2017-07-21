@@ -109,7 +109,7 @@ function validateProp(key, value) {
         return Extender.validateEach(value);
     case "if":
     case "fi":
-        return Extender.validateExp(value);
+        return Extender.validateExpr(value);
     default:
         return true;
     }
