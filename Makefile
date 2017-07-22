@@ -1,6 +1,6 @@
 .PHONY: default install lib samples test perf clean patch minor
 
-default: install lib
+default: install lib test
 
 install:
 	npm install
