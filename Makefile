@@ -4,7 +4,6 @@ default: install lib test
 
 install:
 	npm install
-	npm update
 
 lib:
 	npx babel src -d lib
