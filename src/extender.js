@@ -6,6 +6,7 @@ let P_NUMB = "-?[0-9]+(\\.[0-9]+)?";
 let P_EXPR = `{(?:(${P_PATH})|(${P_NUMB}))}`;
 let P_EACH = `{(${P_NAME}) in (${P_PATH})}`;
 
+let GRE_WS = /\s+/g;
 let GRE_EXPR = RegExp(P_EXPR, "g");
 
 let RE_EXPR = RegExp("^" + P_EXPR + "$");
@@ -30,10 +31,13 @@ function processProp(value, data) {
 
 // (string, object) => string
 function processText(value, data) {
-    return value.replace(GRE_EXPR, m => {
-        let res = processExpr(m, data);
-        return Tools.isVoid(res) ? "" : res + "";
-    });
+    return value
+        .replace(GRE_EXPR, m => {
+            let res = processExpr(m, data);
+            return Tools.isVoid(res) ? "" : res + "";
+        })
+        .replace(GRE_WS, " ")
+        .trim();
 }
 
 // (string, object) => any
