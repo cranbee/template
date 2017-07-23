@@ -91,11 +91,7 @@ function parseTag1(tr) {
 // object => object
 function initTagNode(token) {
     validateProps(token);
-    return {
-        type: token.name,
-        props: token.props,
-        children: []
-    };
+    return { type: token.name, props: token.props, children: [] };
 }
 
 // object => undefined
