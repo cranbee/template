@@ -27,7 +27,7 @@ function parse(tokens) {
 function prepareTokens(tokens) {
     let result = [];
     let lastToken = null;
-    for (let i = 0; i < tokens.length; i += 1) {
+    for (let i = 0; i < tokens.length; i++) {
         let token = tokens[i];
         let newToken;
         if (token.type === "text") {
@@ -102,7 +102,7 @@ function initTagNode(token) {
 // object => undefined
 function validateProps(token) {
     let keys = Object.keys(token.props);
-    for (let i = 0; i < keys.length; i += 1) {
+    for (let i = 0; i < keys.length; i++) {
         let key = keys[i];
         if (!validateProp(key, token.props[key])) {
             throw Tools.syntaxError(`Invalid value for "${key}" property`, token);

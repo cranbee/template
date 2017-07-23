@@ -24,7 +24,7 @@ function packNode(node) {
     if (!hasProps) {
         item.push(0);
     }
-    for (let i = 0; i < node.children.length; i += 1) {
+    for (let i = 0; i < node.children.length; i++) {
         let child = node.children[i];
         item.push(packNode(child));
     }
@@ -41,7 +41,7 @@ function unpackNode(item) {
         props: item[1] || {},
         children: []
     };
-    for (let i = 2; i < item.length; i += 1) {
+    for (let i = 2; i < item.length; i++) {
         node.children.push(unpackNode(item[i]));
     }
     return node;

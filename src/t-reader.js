@@ -31,7 +31,7 @@ function accept($, type) {
     if (token.type !== type) {
         return false;
     }
-    $.pos += 1;
+    $.pos++;
     return true;
 }
 

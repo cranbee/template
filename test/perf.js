@@ -18,7 +18,7 @@ function testScanner(source, ns, ni) {
     let hugeSource = source.repeat(ns);
     let mem = [];
     let start = Date.now();
-    for (let i = 0; i < ni; i += 1) {
+    for (let i = 0; i < ni; i++) {
         mem.push(Scanner.scan(hugeSource));
     }
     console.log(`Time: ${Date.now() - start} ms`);
@@ -33,7 +33,7 @@ function testParser(source, ns, ni) {
     let tokens = Scanner.scan(hugeSource);
     let mem = [];
     let start = Date.now();
-    for (let i = 0; i < ni; i += 1) {
+    for (let i = 0; i < ni; i++) {
         mem.push(Parser.parse(tokens));
     }
     console.log(`Time: ${Date.now() - start} ms`);
@@ -48,7 +48,7 @@ function testExecutor(source, ns, nd, ni) {
     let tokens = Scanner.scan(hugeSource);
     let nodes = Parser.parse(tokens);
     let hugeData = { items: [] };
-    for (let i = 0; i < nd; i += 1) {
+    for (let i = 0; i < nd; i++) {
         let isAvailable = i % 2 === 0;
         hugeData.items.push({
             title: `Product ${i}`,
@@ -62,7 +62,7 @@ function testExecutor(source, ns, nd, ni) {
     }
     let mem = [];
     let start = Date.now();
-    for (let i = 0; i < ni; i += 1) {
+    for (let i = 0; i < ni; i++) {
         mem.push(Executor.execute(nodes, hugeData));
     }
     console.log(`Time: ${Date.now() - start} ms`);
