@@ -3,10 +3,7 @@ let Extender = require("./extender.js");
 // (array, object) => array
 function execute(template, data) {
     let result = [];
-    for (let i = 0; i < template.length; i++) {
-        let node = template[i];
-        executeNode(node, data, result);
-    }
+    template.forEach(node => executeNode(node, data, result));
     return result;
 }
 
@@ -29,23 +26,14 @@ function executeNode(node, data, result) {
         return;
     }
     let props = {};
-    let keys = Object.keys(node.props);
-    for (let i = 0; i < keys.length; i++) {
-        let key = keys[i];
+    Object.keys(node.props).forEach(key => {
         if (key !== "each" && key !== "if" && key !== "fi") {
             props[key] = Extender.processProp(node.props[key], data);
         }
-    }
-    let children = [];
-    for (let i = 0; i < node.children.length; i++) {
-        let child = node.children[i];
-        executeNode(child, data, children);
-    }
-    result.push({
-        type: node.type,
-        props,
-        children
     });
+    let children = [];
+    node.children.forEach(child => executeNode(child, data, children));
+    result.push({ type: node.type, props, children });
 }
 
 // (object, object, array) => undefined
@@ -69,11 +57,10 @@ function executeEach(node, data, result) {
     };
     nextNode.props.each = null;
     let nextData = Object.assign({}, data);
-    for (let i = 0; i < each.items.length; i++) {
-        let item = each.items[i];
+    each.items.forEach(item => {
         nextData[each.item] = item;
         executeNode(nextNode, nextData, result);
-    }
+    });
 }
 
 // (object, object, array) => undefined
